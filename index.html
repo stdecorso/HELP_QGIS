@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice Video Guide - ISPRA</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        .header { text-align: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .logo { width: 400px; max-width: 100%; height: auto; }
+        h1 { color: #005587; font-size: 24px; margin-top: 10px; }
+        
+        #searchBar { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #005587; border-radius: 25px; font-size: 16px; outline: none; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+        .card { background: white; padding: 15px; border-radius: 8px; border-left: 5px solid #005587; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s; text-decoration: none; color: #333; display: flex; align-items: center; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #eef6fb; }
+        .card span { font-weight: bold; word-break: break-all; }
+        
+        .footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="https://sinacloud.isprambiente.it/portal/media/logo_ISPRA_.png" alt="Logo ISPRA" class="logo">
+    <h1>Manuali e Video Guide Tecniche</h1>
+</div>
+
+<input type="text" id="searchBar" onkeyup="filterLinks()" placeholder="Cerca una guida (es. NDVI, PostGIS, Copernicus...)...">
+
+<div class="grid-container" id="linkList">
+    <a class="card" href="1a_avanzato.html"><span>1a_avanzato</span></a>
+    <a class="card" href="1a.html"><span>1a</span></a>
+    <a class="card" href="1b_avanzato.html"><span>1b_avanzato</span></a>
+    <a class="card" href="1c_av_.html"><span>1c_av_</span></a>
+    <a class="card" href="1d.html"><span>1d</span></a>
+    <a class="card" href="2_avanzatoChange.html"><span>2_avanzatoChange</span></a>
+    <a class="card" href="2_avDTM1.html"><span>2_avDTM1</span></a>
+    <a class="card" href="2_avDTM2.html"><span>2_avDTM2</span></a>
+    <a class="card" href="2_avNDVI1.html"><span>2_avNDVI1</span></a>
+    <a class="card" href="2_avNDVI2.html"><span>2_avNDVI2</span></a>
+    <a class="card" href="2a.html"><span>2a</span></a>
+    <a class="card" href="2aClipdissolve.html"><span>2aClipdissolve</span></a>
+    <a class="card" href="2b.html"><span>2b</span></a>
+    <a class="card" href="2bbuffer.html"><span>2bbuffer</span></a>
+    <a class="card" href="2c_copia_stile.html"><span>2c_copia_stile</span></a>
+    <a class="card" href="2c.html"><span>2c</span></a>
+    <a class="card" href="2f_mappa_fruibilita.html"><span>2f_mappa_fruibilita</span></a>
+    <a class="card" href="3a.html"><span>3a</span></a>
+    <a class="card" href="3b.html"><span>3b</span></a>
+    <a class="card" href="3c.html"><span>3c</span></a>
+    <a class="card" href="3d.html"><span>3d</span></a>
+    <a class="card" href="3d1.html"><span>3d1</span></a>
+    <a class="card" href="3e.html"><span>3e</span></a>
+    <a class="card" href="3g.html"><span>3g</span></a>
+    <a class="card" href="3h_relate.html"><span>3h_relate</span></a>
+    <a class="card" href="4a.html"><span>4a</span></a>
+    <a class="card" href="5_avpostgis1.html"><span>5_avpostgis1</span></a>
+    <a class="card" href="5_avpostgis2.html"><span>5_avpostgis2</span></a>
+    <a class="card" href="5a.html"><span>5a</span></a>
+    <a class="card" href="6geoserver.html"><span>6geoserver</span></a>
+    <a class="card" href="6qgis2web.html"><span>6qgis2web</span></a>
+    <a class="card" href="aree_inondate.html"><span>aree_inondate</span></a>
+    <a class="card" href="atlante_geochimico.html"><span>atlante_geochimico</span></a>
+    <a class="card" href="comp_time.html"><span>comp_time</span></a>
+    <a class="card" href="cop_browser_change.html"><span>cop_browser_change</span></a>
+    <a class="card" href="cop_browser_download_dataset.html"><span>cop_browser_download_dataset</span></a>
+    <a class="card" href="cop_browser_gif.html"><span>cop_browser_gif</span></a>
+    <a class="card" href="cop_browser_indici.html"><span>cop_browser_indici</span></a>
+    <a class="card" href="cop_browser_personalizzazione.html"><span>cop_browser_personalizzazione</span></a>
+    <a class="card" href="cop_browser_ricerca_dataset.html"><span>cop_browser_ricerca_dataset</span></a>
+    <a class="card" href="cop_browser_visualizza.html"><span>cop_browser_visualizza</span></a>
+    <a class="card" href="crea_vista.html"><span>crea_vista</span></a>
+    <a class="card" href="crit_prio.html"><span>crit_prio</span></a>
+    <a class="card" href="edit3.html"><span>edit3</span></a>
+    <a class="card" href="firma_spettrale.html"><span>firma_spettrale</span></a>
+    <a class="card" href="green1a.html"><span>green1a</span></a>
+    <a class="card" href="immagini_composite.html"><span>immagini_composite</span></a>
+    <a class="card" href="indici_osavi_ndvre.html"><span>indici_osavi_ndvre</span></a>
+    <a class="card" href="installpg.html"><span>installpg</span></a>
+    <a class="card" href="istogramma.html"><span>istogramma</span></a>
+    <a class="card" href="join_multiplo.html"><span>join_multiplo</span></a>
+    <a class="card" href="join_spaziale.html"><span>join_spaziale</span></a>
+    <a class="card" href="join2.html"><span>join2</span></a>
+    <a class="card" href="mappa_fruibilita.html"><span>mappa_fruibilita</span></a>
+    <a class="card" href="multi_time1.html"><span>multi_time1</span></a>
+    <a class="card" href="multi_time2.html"><span>multi_time2</span></a>
+    <a class="card" href="Pansharp.html"><span>Pansharp</span></a>
+    <a class="card" href="prossimit.html"><span>prossimit</span></a>
+    <a class="card" href="qgis_base_vestizione_1.html"><span>qgis_base_vestizione_1</span></a>
+    <a class="card" href="raster_postgis1.html"><span>raster_postgis1</span></a>
+    <a class="card" href="registra_account_cop.html"><span>registra_account_cop</span></a>
+    <a class="card" href="relatepostgis.html"><span>relatepostgis</span></a>
+    <a class="card" href="ricerca_e_download.html"><span>ricerca_e_download</span></a>
+    <a class="card" href="riclassifica_per_layer.html"><span>riclassifica_per_layer</span></a>
+    <a class="card" href="riposiziona_miniere.html"><span>riposiziona_miniere</span></a>
+    <a class="card" href="risultato_esatto.html"><span>risultato_esatto</span></a>
+    <a class="card" href="snap_metadati.html"><span>snap_metadati</span></a>
+    <a class="card" href="snap_visualizza.html"><span>snap_visualizza</span></a>
+    <a class="card" href="test_ntestazione_video.html"><span>test_ntestazione_video</span></a>
+    <a class="card" href="time.html"><span>time</span></a>
+    <a class="card" href="utilizzo_cop.html"><span>utilizzo_cop</span></a>
+</div>
+
+<div class="footer">
+    <p>Portale Help Video - Caricato su GitHub Pages</p>
+</div>
+
+<script>
+function filterLinks() {
+    var input, filter, container, cards, span, i, txtValue;
+    input = document.getElementById('searchBar');
+    filter = input.value.toUpperCase();
+    container = document.getElementById("linkList");
+    cards = container.getElementsByClassName('card');
+
+    for (i = 0; i < cards.length; i++) {
+        span = cards[i].getElementsByTagName("span")[0];
+        txtValue = span.textContent || span.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+
